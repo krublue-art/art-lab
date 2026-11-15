@@ -156,6 +156,24 @@
                     </div>
                     <span class="text-[10px] text-emerald-600 font-bold mt-2 text-right">แตะดูหลักการออกแบบ ↗</span>
                 </div>
+
+                <!-- Card 1.5: Sketch Design (การออกแบบร่าง) -->
+                <div onclick="openModal('Sketch Design (การออกแบบร่างเบื้องต้น)', 'การสเก็ตช์ภาพ (Sketch Design) คือหัวใจสำคัญของการถ่ายทอดความคิดสร้างสรรค์จากจินตนาการลงสู่กระดาษหรือหน้าจอดิจิทัลอย่างรวดเร็ว ก่อนลงมือทำชิ้นงานจริง\n\n1. Thumbnail Sketch (การร่างภาพขนาดจิ๋ว):\n - วาดกรอบเล็กๆ 3-5 แบบ เพื่อทดลองจัดองค์ประกอบ ท่าทาง (Pose) และมุมมองที่แตกต่างกันโดยไม่ต้องกลัวผิด\n\n2. Construction Lines (เส้นโครงสร้างพื้นฐาน):\n - ขึ้นโครงร่างด้วยรูปทรงเรขาคณิตง่ายๆ (วงกลม วงรี สี่เหลี่ยม) และเส้นแกนกลางลำตัว (Line of Action) เพื่อกำหนดสัดส่วนและการเคลื่อนไหว\n\n3. Rough Sketch & Detail (การร่างหยาบและใส่รายละเอียด):\n - ค่อยๆ เติมรายละเอียดเสื้อผ้า ลวดลายอัตลักษณ์ถิ่น (เช่น ลายผ้ามัดหมี่ เครื่องดนตรีแคน) และอุปกรณ์ประจำตัว\n\n4. Clean Line & Annotation (การตัดเส้นและจดบันทึกแนวคิด):\n - เน้นเส้นหลักให้ชัดเจน พร้อมเขียนคำอธิบายสั้นๆ ชี้จุดเด่น วัสดุ หรือโทนสีที่ตั้งใจใช้ (Concept Note)\n\n💡 เคล็ดลับครูบลู: ไม่ต้องใช้ยางลบบ่อยในขั้นตอนร่าง! การปล่อยเส้นร่างซ้อนทับกันจะช่วยให้เห็นกระบวนการคิดและพัฒนาการของไอเดียได้ชัดเจนยิ่งขึ้น')" class="bg-white p-3 rounded-xl shadow-sm border border-amber-200/80 cursor-pointer active:scale-95 transition flex flex-col justify-between col-span-2">
+                    <div>
+                        <div class="w-full h-20 bg-gradient-to-tr from-amber-50 to-orange-100 rounded-lg mb-2 flex items-center justify-center overflow-hidden border border-amber-200">
+                            <!-- SVG Thumbnail: Pencil / Sketch Design -->
+                            <svg class="w-10 h-10 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="text-amber-700 font-bold text-sm mb-0.5">✏️ Sketch Design (การออกแบบร่าง)</div>
+                            <span class="bg-amber-100 text-amber-800 text-[9px] px-2 py-0.5 rounded-full font-bold">Core Process</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500">Thumbnail Sketch, เส้นโครงสร้าง (Line of Action), การใส่รายละเอียด และ Concept Note</p>
+                    </div>
+                    <span class="text-[10px] text-amber-700 font-bold mt-2 text-right">แตะดูขั้นตอนการ Sketch Design ↗</span>
+                </div>
             </div>
         </section>
 
@@ -226,10 +244,20 @@
                     </div>
 
                     <!-- Carousel Controls -->
-                    <div class="flex justify-between items-center p-2 bg-white text-xs">
-                        <button onclick="prevSlide()" class="p-1 rounded-lg bg-slate-100 text-slate-700 font-bold hover:bg-slate-200 active:scale-95 transition px-2.5">◀ ก่อนหน้า</button>
-                        <span id="slideIndicator" class="text-[11px] font-bold text-slate-500">1 / 3</span>
-                        <button onclick="nextSlide()" class="p-1 rounded-lg bg-amber-500 text-white font-bold hover:bg-amber-600 active:scale-95 transition px-2.5">ถัดไป ▶</button>
+                    <div class="flex justify-between items-center p-2.5 bg-white text-xs border-t border-amber-100">
+                        <button onclick="prevSlide()" class="p-1.5 rounded-lg bg-slate-100 text-slate-700 font-bold hover:bg-slate-200 active:scale-95 transition px-2.5">◀ ก่อนหน้า</button>
+                        
+                        <!-- Star Giving Button -->
+                        <button onclick="giveStar()" class="flex items-center gap-1.5 bg-amber-100 hover:bg-amber-200 text-amber-800 border border-amber-300 px-3 py-1.5 rounded-full font-bold shadow-sm active:scale-90 transition">
+                            <span class="text-sm leading-none">⭐</span>
+                            <span>ให้ดาว</span>
+                            <span id="starCountBadge" class="bg-amber-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-extrabold">24</span>
+                        </button>
+
+                        <button onclick="nextSlide()" class="p-1.5 rounded-lg bg-amber-500 text-white font-bold hover:bg-amber-600 active:scale-95 transition px-2.5">ถัดไป ▶</button>
+                    </div>
+                    <div class="bg-amber-50/60 text-center py-1 text-[10px] text-amber-800 font-medium border-t border-amber-100/80">
+                        ผลงานที่ <span id="slideIndicator" class="font-bold">1 / 3</span> • แตะปุ่ม "ให้ดาว" เพื่อส่งกำลังใจให้ผู้สร้างสรรค์
                     </div>
                 </div>
             </div>
@@ -394,19 +422,22 @@
                 img: "https://placehold.co/400x250/d97706/ffffff?text=ISAN-LAB+Character+Design",
                 badge: "ม.2/1 • ISAN-LAB",
                 title: "ตัวละคร \"สินไซยุคไซเบอร์\"",
-                author: "โดย ด.ช.อนันต์ สุขใจ (ใช้สีครามตัดสีส้มอิฐ)"
+                author: "โดย ด.ช.อนันต์ สุขใจ (ใช้สีครามตัดสีส้มอิฐ)",
+                stars: 24
             },
             {
                 img: "https://placehold.co/400x250/4f46e5/ffffff?text=Silk+Pattern+Armor",
                 badge: "ม.2/2 • ISAN-LAB",
                 title: "ชุดเกราะ \"ลายมัดหมี่ขอนแก่น\"",
-                author: "โดย ด.ญ.กัญญารัตน์ มีสุข (เน้นความสมดุลแบบสมมาตร)"
+                author: "โดย ด.ญ.กัญญารัตน์ มีสุข (เน้นความสมดุลแบบสมมาตร)",
+                stars: 19
             },
             {
                 img: "https://placehold.co/400x250/059669/ffffff?text=Phuwiang+Dino+Mascot",
                 badge: "ม.2/3 • ISAN-LAB",
                 title: "มาสคอต \"ไดโนเสาร์ยอดนักซอ\"",
-                author: "โดย ด.ช.พงศกร สว่างวงศ์ (เน้นจังหวะความเคลื่อนไหว)"
+                author: "โดย ด.ช.พงศกร สว่างวงศ์ (เน้นจังหวะความเคลื่อนไหว)",
+                stars: 31
             }
         ];
 
@@ -418,7 +449,18 @@
             document.getElementById('spotlightBadge').innerText = item.badge;
             document.getElementById('spotlightTitle').innerText = item.title;
             document.getElementById('spotlightAuthor').innerText = item.author;
+            document.getElementById('starCountBadge').innerText = item.stars;
             document.getElementById('slideIndicator').innerText = `${currentSlide + 1} / ${spotlightData.length}`;
+        }
+
+        function giveStar() {
+            spotlightData[currentSlide].stars += 1;
+            const badge = document.getElementById('starCountBadge');
+            badge.innerText = spotlightData[currentSlide].stars;
+            badge.classList.add('scale-125', 'bg-orange-600');
+            setTimeout(() => {
+                badge.classList.remove('scale-125', 'bg-orange-600');
+            }, 250);
         }
 
         function nextSlide() {
