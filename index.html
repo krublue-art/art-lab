@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khon Kaen Art & Culture Hub</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Prompt for modern Thai look -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        /* Custom scrollbar for mobile cards */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="max-w-md mx-auto min-h-screen bg-slate-50 flex flex-col shadow-xl border-x border-slate-200">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="bg-gradient-to-r from-indigo-700 to-purple-800 text-white p-4 sticky top-0 z-50 shadow-md flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <!-- Palette & Brush SVG Icon -->
+            <div class="bg-purple-900/60 p-1.5 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.359v-3.186a1 1 0 011-1h.09a1 1 0 01.91.593l1.5 3"></path>
+                </svg>
+            </div>
+            <div>
+                <h1 class="text-lg font-bold tracking-wide leading-tight">ART-LAB Official</h1>
+                <p class="text-[10px] text-indigo-200 font-light">คุณครูสิปปกร นิติกิจดำรง | ศิลปะ รร.บ้านดอนแดงดอนน้อยวิทยา</p>
+                <p class="text-[9px] text-indigo-300">สพป.ขอนแก่น เขต 1</p>
+            </div>
+        </div>
+        <button onclick="toggleMenu()" class="p-2 rounded-lg bg-purple-900/60 active:scale-95 transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </header>
+
+    <!-- MOBILE MENU DRAWER -->
+    <div id="mobileMenu" class="fixed inset-0 bg-black/50 z-50 hidden transition-opacity" onclick="toggleMenu()">
+        <div class="bg-white w-3/4 h-full p-6 shadow-2xl flex flex-col gap-3 overflow-y-auto" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center border-b pb-3">
+                <h2 class="font-bold text-lg text-indigo-900">เมนูนวัตกรรม คศ.4</h2>
+                <button onclick="toggleMenu()" class="text-gray-500 font-bold text-xl">✕</button>
+            </div>
+            <a href="#pa-base" onclick="toggleMenu()" class="p-2.5 bg-indigo-50 rounded-xl font-medium text-indigo-900 text-xs">🎯 ประเด็นท้าทาย (PA)</a>
+            <a href="#home" onclick="toggleMenu()" class="p-2.5 hover:bg-slate-100 rounded-xl text-slate-700 font-medium text-xs">1. 🏠 Home (หน้าแรก & แรงบันดาลใจ)</a>
+            <a href="#fundamentals" onclick="toggleMenu()" class="p-2.5 hover:bg-slate-100 rounded-xl text-slate-700 font-medium text-xs">2. 🎨 Art Fundamentals (พื้นฐานทัศนศิลป์)</a>
+            <a href="#labs" onclick="toggleMenu()" class="p-2.5 hover:bg-slate-100 rounded-xl text-slate-700 font-medium text-xs">3. 🧪 Experimental Labs (ห้องทดลอง)</a>
+            <a href="#gallery" onclick="toggleMenu()" class="p-2.5 hover:bg-slate-100 rounded-xl text-slate-700 font-medium text-xs">4. 🖼️ Art Gallery & Sharing (พื้นที่จัดแสดง)</a>
+            <a href="#knowledge" onclick="toggleMenu()" class="p-2.5 hover:bg-slate-100 rounded-xl text-slate-700 font-medium text-xs">5. 📚 Knowledge Hub & Tools (คลังความรู้)</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <main class="flex-1 pb-20 space-y-4">
+
+        <!-- SECTION 0: PA BASELINE BANNER -->
+        <section id="pa-base" class="px-4 pt-4">
+            <div class="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-2xl p-5 text-white shadow-lg relative overflow-hidden">
+                <div class="absolute -right-4 -bottom-4 opacity-10 text-8xl font-bold">PA</div>
+                <div class="relative z-10">
+                    <h2 class="text-base font-bold leading-snug">"การพัฒนารูปแบบการจัดการเรียนรู้ดิจิทัลผ่าน ART-LAB Ecosystem ร่วมกับ Google Classroom"</h2>
+                    <p class="text-xs text-indigo-100 mt-1">เพื่อพัฒนาทักษะการสร้างสรรค์ผลงานทัศนศิลป์และสมรรถนะการคิดของผู้เรียน ชั้นมัธยมศึกษาปีที่ 2</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 1: HOME -->
+        <section id="home" class="px-4">
+            <div class="bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl p-5 text-white shadow-lg">
+                <span class="bg-white/20 text-xs px-3 py-1 rounded-full font-medium">1. Home & Inspiration</span>
+                <h2 class="text-xl font-bold mt-2">ยินดีต้อนรับสู่ ART-LAB Ecosystem</h2>
+                <p class="text-xs text-amber-100 mt-1">พื้นที่สร้างสรรค์ผลงานศิลปะดิจิทัลอย่างไร้ขีดจำกัด พัฒนาผู้เรียนด้วยนวัตกรรมเชิงประจักษ์</p>
+                <div class="mt-3 flex gap-2">
+                    <a href="#labs" class="bg-white text-orange-700 text-xs font-bold px-3 py-2 rounded-xl shadow">เข้าสู่ห้องทดลอง ➔</a>
+                    <button onclick="openModal('วิธีเข้าใช้งานสำหรับนักเรียน', '1. สแกน QR Code หรือคลิกลิงก์เว็บไซต์ ART-LAB ที่ครูบลูโพสต์ไว้ในหน้า Stream ของ Google Classroom\n\n2. ศึกษาเนื้อหาและสำรวจแต่ละโซน เช่น ถอดรหัส 5 มิติอีสานใน ISAN-LAB\n\n3. ออกแบบและสร้างสรรค์ผลงาน แล้วกดส่งชิ้นงานพร้อมแนบลิงก์ Canva/ภาพถ่าย ผ่านระบบ Google Classroom ตามกำหนด')" class="bg-amber-700/60 text-white text-xs font-bold px-3 py-2 rounded-xl">📱 วิธีเข้าใช้งาน</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 2: ART FUNDAMENTALS -->
+        <section id="fundamentals" class="px-4">
+            <div class="flex justify-between items-center mb-2">
+                <h3 class="font-bold text-base text-slate-800">2. Art Fundamentals (พื้นฐานทัศนศิลป์)</h3>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+                <!-- Card 1.1: ทัศนธาตุ (Visual Elements) -->
+                <div onclick="openModal('ทัศนธาตุ (Visual Elements) - ส่วนประกอบพื้นฐาน', '1. จุด (Point): เล็กที่สุด ช่วยสร้างตำแหน่งหรือรวมกันเป็นรูปร่าง\n\n2. เส้น (Line): เกิดจากจุดเคลื่อนที่ ให้ความรู้สึกและทิศทางที่แตกต่างกัน (เช่น เส้นตรง เส้นโค้ง)\n\n3. รูปร่างและรูปทรง (Shape & Form): รูปร่างคือ 2 มิติ (กว้าง x ยาว) ส่วนรูปทรงคือ 3 มิติ (มีความหนาและลึก)\n\n4. สี (Color): สร้างอารมณ์ ความรู้สึก แรงดึงดูด และแบ่งวรรณะสี (ร้อน/เย็น)\n\n5. แสงและเงา / ค่าน้ำหนัก (Light & Shadow / Value): ความเข้ม-อ่อนที่ช่วยสร้างมิติและระยะใกล้-ไกล\n\n6. พื้นผิว (Texture): ลักษณะผิวสัมผัสที่รับรู้ได้ด้วยตาหรือการสัมผัส (เรียบ ขรุขระ หยาบ)\n\n7. พื้นที่ว่าง (Space): ระยะห่างหรือพื้นที่รอบๆ วัตถุ ช่วยไม่ให้งานอึดอัดและเน้นจุดสำคัญ')" class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 cursor-pointer active:scale-95 transition flex flex-col justify-between col-span-2">
+                    <div>
+                        <div class="w-full h-24 bg-gradient-to-tr from-blue-50 to-indigo-100 rounded-lg mb-2 flex items-center justify-center overflow-hidden border border-blue-100">
+                            <!-- SVG Thumbnail: Visual Elements -->
+                            <svg class="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+                            </svg>
+                        </div>
+                        <div class="text-blue-600 font-bold text-sm mb-0.5">🎨 ทัศนธาตุ (Visual Elements)</div>
+                        <p class="text-[11px] text-slate-500">จุด, เส้น, รูปร่าง-รูปทรง, สี, แสงเงา, พื้นผิว และพื้นที่ว่าง</p>
+                    </div>
+                    <span class="text-[10px] text-blue-600 font-bold mt-2 text-right">แตะดูรายละเอียดทั้ง 7 ข้อ ↗</span>
+                </div>
+
+                <!-- Card 1.2: หลักการจัดองค์ประกอบศิลป์ -->
+                <div onclick="openModal('หลักการสำคัญในการจัดองค์ประกอบศิลป์', '1. เอกภาพ (Unity): ความเป็นหนึ่งเดียว องค์ประกอบทั้งหมดประสานกันไปในทิศทางเดียวกัน ไม่กระจัดกระจาย\n\n2. ความสมดุล (Balance): น้ำหนักซ้าย-ขวาหรือรอบจุดศูนย์กลาง มีทั้งแบบสมมาตร (เท่ากัน นิ่งสงบ) และอสมมาตร (ไม่เท่ากัน แต่ดูลงตัว มีพลัง)\n\n3. จุดเด่น / การเน้น (Dominance / Emphasis): การสร้างจุดรวมสายตา (Focal Point) ให้มีจุดสำคัญที่สุดของภาพ เช่น การจัดวางตำแหน่งหรือขนาดที่โดดเด่น\n\n4. จังหวะและลีลา (Rhythm): ความต่อเนื่องหรือการทำซ้ำขององค์ประกอบที่สร้างความเคลื่อนไหว ไม่ให้งานดูแข็งทื่อ\n\n5. สัดส่วน (Proportion): ความสัมพันธ์ที่เหมาะสมระหว่างขนาดของแต่ละองค์ประกอบ หรือการใช้สัดส่วนทองคำ (Golden Ratio)\n\n6. ความกลมกลืนและความขัดแย้ง (Harmony & Contrast): การใช้สิ่งที่เข้ากันได้ดีเพื่อความนุ่มนวล หรือใช้สิ่งที่แตกต่างกันเล็กน้อยเพื่อไม่ให้ภาพจืดชืด')" class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 cursor-pointer active:scale-95 transition flex flex-col justify-between col-span-2">
+                    <div>
+                        <div class="w-full h-20 bg-gradient-to-tr from-indigo-50 to-purple-100 rounded-lg mb-2 flex items-center justify-center overflow-hidden border border-indigo-100">
+                            <!-- SVG Thumbnail: Art Composition Grid & Principles -->
+                            <svg class="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zM14 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"></path>
+                            </svg>
+                        </div>
+                        <div class="text-indigo-600 font-bold text-sm mb-0.5">📐 หลักการจัดองค์ประกอบศิลป์</div>
+                        <p class="text-[11px] text-slate-500">เอกภาพ, ความสมดุล, จุดเด่น, จังหวะลีลา, สัดส่วน และความกลมกลืน-ขัดแย้ง</p>
+                    </div>
+                    <span class="text-[10px] text-indigo-600 font-bold mt-2 text-right">แตะดูหลักการทั้ง 6 ข้อ ↗</span>
+                </div>
+
+                <!-- Card 1.3: ทฤษฎีสี & แสงเงา -->
+                <div onclick="openModal('ทฤษฎีสีและแสงเงา (Color & Value)', '1. วรรณะสี: สีร้อน (ให้พลัง ความดุดัน) vs สีเย็น (ให้ความสงบ ลึกลับ)\n2. น้ำหนัก (Value): การไล่ระดับแสง-เงา (Highlight & Shadow) เพื่อสร้างมิติ 3 มิติบนตัวละคร\n\n💡 ตัวอย่างการใช้: ใช้โทนสีส้มอิฐคู่กับสีครามเพื่อตัดกันให้คาแรคเตอร์โดดเด่น')" class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 cursor-pointer active:scale-95 transition flex flex-col justify-between col-span-2">
+                    <div>
+                        <div class="w-full h-20 bg-gradient-to-tr from-purple-50 to-pink-100 rounded-lg mb-2 flex items-center justify-center overflow-hidden border border-purple-100">
+                            <!-- SVG Thumbnail: Color Wheel & Palette -->
+                            <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.359v-3.186a1 1 0 011-1h.09a1 1 0 01.91.593l1.5 3"></path>
+                            </svg>
+                        </div>
+                        <div class="text-purple-600 font-bold text-sm mb-0.5">🎨 ทฤษฎีสี & แสงเงา</div>
+                        <p class="text-[11px] text-slate-500">การให้น้ำหนักและอารมณ์สี</p>
+                    </div>
+                    <span class="text-[10px] text-purple-600 font-bold mt-2 text-right">แตะดูตัวอย่าง ↗</span>
+                </div>
+
+                <!-- Card 1.4: หลักการออกแบบตัวละคร (Character Design) -->
+                <div onclick="openModal('หลักการออกแบบตัวละคร (Character Design)', '1. รูปทรงพื้นฐานบอกบุคลิก (Shape Language):\n - วงกลม (Circle): นุ่มนวล ใจดี เป็นมิตร น่ารัก\n - สี่เหลี่ยม (Square): มั่นคง แข็งแกร่ง อดทน ซื่อสัตย์\n - สามเหลี่ยม (Triangle): แหลมคม รวดเร็ว ฉลาด หรือเป็นตัวร้าย\n\n2. เงาร่างที่จดจำง่าย (Silhouette & Clarity):\n ตัวละครที่ดีต้องมองเห็นแค่เงาดำ (Silhouette) ก็จำได้ทันทีว่าใคร ท่าทางกำลังทำอะไรอยู่\n\n3. อัตราส่วนและสัดส่วน (Proportion & Exaggeration):\n การย่อ-ขยายสัดส่วนบางอย่างเพื่อเน้นจุดเด่น เช่น หัวโตตัวเล็ก (สไตล์ Chibi น่ารัก) หรือขายาวไหล่กว้าง (ฮีโร่)\n\n4. พาเลตต์สีและธีม (Color Palette & Theme):\n เลือกใช้สีหลักไม่เกิน 3-4 สี เพื่อควบคุมโทนอารมณ์ และสื่อถึงพลังหรือคุณลักษณะเฉพาะตัว\n\n5. พร็อพและเครื่องแต่งกาย (Props & Costume):\n ของใช้ประจำตัว ของประดับ หรือลวดลายผ้าที่ช่วยเล่าเรื่องราว ปูหลัง (Backstory) และอัตลักษณ์ถิ่น')" class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 cursor-pointer active:scale-95 transition flex flex-col justify-between col-span-2">
+                    <div>
+                        <div class="w-full h-20 bg-gradient-to-tr from-amber-50 to-emerald-100 rounded-lg mb-2 flex items-center justify-center overflow-hidden border border-emerald-100">
+                            <!-- SVG Thumbnail: Character Design / User Avatar Icon -->
+                            <svg class="w-10 h-10 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                            </svg>
+                        </div>
+                        <div class="text-emerald-600 font-bold text-sm mb-0.5">👤 หลักการออกแบบตัวละคร (Character Design)</div>
+                        <p class="text-[11px] text-slate-500">Shape Language, Silhouette, สัดส่วน, โทนสี และพร็อพเล่าเรื่อง</p>
+                    </div>
+                    <span class="text-[10px] text-emerald-600 font-bold mt-2 text-right">แตะดูหลักการออกแบบ ↗</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 3: EXPERIMENTAL LABS (ISAN-LAB & MORE) -->
+        <section id="labs" class="px-4">
+            <div class="flex justify-between items-center mb-2">
+                <h3 class="font-bold text-base text-slate-800">3. Experimental Labs (ห้องทดลอง)</h3>
+                <span class="text-[11px] text-indigo-600 font-bold">Active Modules</span>
+            </div>
+            <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 space-y-3">
+                <div class="flex items-center justify-between border-b pb-3">
+                    <div>
+                        <span class="bg-amber-100 text-amber-800 text-[10px] px-2 py-0.5 rounded-full font-bold">ม.2 Active Module</span>
+                        <h4 class="font-bold text-xs text-slate-800 mt-1">ISAN-LAB: อัตลักษณ์ขอนแก่น</h4>
+                        <p class="text-[11px] text-slate-500">ออกแบบตัวละครจาก 5 มิติวัฒนธรรมอีสาน</p>
+                    </div>
+                    <button onclick="openModal('ISAN-LAB Module', 'ห้องทดลองหลักสำหรับนักเรียนชั้น ม.2 นำอัตลักษณ์ 5 มิติ (ลายผ้า, โทนสี, สิม/ไดโนเสาร์, สินไซ, แคน/วิถีชีวิต) มาประยุกต์ออกแบบ Character Design')" class="bg-indigo-700 text-white text-xs px-3 py-2 rounded-xl font-bold">เปิด Lab</button>
+                </div>
+                <!-- 5 Dimensions Quick List -->
+                <div class="space-y-2">
+                    <div onclick="openModal('Visual & Pattern', 'ลายผ้าไหมมัดหมี่ ลายเสือ หรือลายดอกคูน และลวดลายเรขาคณิตบนสถาปัตยกรรมโบราณ')" class="bg-slate-50 p-2.5 rounded-xl text-xs flex justify-between items-center cursor-pointer active:bg-slate-100">
+                        <span class="font-medium text-slate-700">🧵 1. Visual & Pattern (ลายผ้า/เส้นสาย)</span>
+                        <span class="text-[10px] text-indigo-600">ดูข้อมูล ↗</span>
+                    </div>
+                    <div onclick="openModal('Color Palette', 'โทนสีประจำถิ่น: สีส้มอิฐ สีเหลืองดอกคูน และสีครามธรรมชาติ')" class="bg-slate-50 p-2.5 rounded-xl text-xs flex justify-between items-center cursor-pointer active:bg-slate-100">
+                        <span class="font-medium text-slate-700">🎨 2. Color Palette (โทนสีประจำถิ่น)</span>
+                        <span class="text-[10px] text-indigo-600">ดูข้อมูล ↗</span>
+                    </div>
+                    <div onclick="openModal('Shape & Architecture', 'รูปทรงสิมอีสาน และซากดึกดำบรรพ์ภูเวียง')" class="bg-slate-50 p-2.5 rounded-xl text-xs flex justify-between items-center cursor-pointer active:bg-slate-100">
+                        <span class="font-medium text-slate-700">🏛️ 3. Shape & Architecture (สิม/ไดโนเสาร์)</span>
+                        <span class="text-[10px] text-indigo-600">ดูข้อมูล ↗</span>
+                    </div>
+                    <div onclick="openModal('Myth & Storytelling', 'วรรณกรรมพื้นบ้านสินไซ ผู้กล้าแห่งเมืองขอนแก่น')" class="bg-slate-50 p-2.5 rounded-xl text-xs flex justify-between items-center cursor-pointer active:bg-slate-100">
+                        <span class="font-medium text-slate-700">📜 4. Myth & Storytelling (วรรณกรรมสินไซ)</span>
+                        <span class="text-[10px] text-indigo-600">ดูข้อมูล ↗</span>
+                    </div>
+                    <div onclick="openModal('Lifestyle & Props', 'เครื่องดนตรีแคน กระติบข้าวเหนียว และวิถีชีวิตลุ่มน้ำชี')" class="bg-slate-50 p-2.5 rounded-xl text-xs flex justify-between items-center cursor-pointer active:bg-slate-100">
+                        <span class="font-medium text-slate-700">🎶 5. Lifestyle & Props (แคน/กระติบ/วิถีชีวิต)</span>
+                        <span class="text-[10px] text-indigo-600">ดูข้อมูล ↗</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 4: ART GALLERY & SHARING -->
+        <section id="gallery" class="px-4">
+            <h3 class="font-bold text-base text-slate-800 mb-2">4. Art Gallery & Sharing (พื้นที่จัดแสดง)</h3>
+            
+            <!-- STUDENT SPOTLIGHT / TODAY'S MASTERPIECE CAROUSEL -->
+            <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-4 shadow-sm border border-amber-200/80 mb-3 space-y-3">
+                <div class="flex justify-between items-center">
+                    <span class="bg-amber-500 text-white text-[10px] px-2.5 py-0.5 rounded-full font-bold shadow-sm">⭐ Student Spotlight</span>
+                    <span class="text-[10px] text-amber-800 font-semibold">ผลงานดาวเด่นประจำสัปดาห์</span>
+                </div>
+                
+                <!-- CAROUSEL SLIDE -->
+                <div class="relative bg-white rounded-xl overflow-hidden shadow border border-amber-100">
+                    <div id="carouselSlide" class="relative">
+                        <!-- Image & Overlay Container -->
+                        <div class="h-44 bg-slate-200 relative overflow-hidden flex items-center justify-center">
+                            <img id="spotlightImg" src="https://placehold.co/400x250/d97706/ffffff?text=ISAN-LAB+Character+Design" alt="Student Artwork" class="w-full h-full object-cover transition-all duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-3 text-white">
+                                <span id="spotlightBadge" class="bg-amber-400 text-slate-900 font-bold text-[9px] px-2 py-0.5 rounded-md w-fit mb-1">ม.2/1 • ISAN-LAB</span>
+                                <h4 id="spotlightTitle" class="font-bold text-sm leading-tight">ตัวละคร "สินไซยุคไซเบอร์"</h4>
+                                <p id="spotlightAuthor" class="text-[11px] text-slate-200">โดย ด.ช.อนันต์ สุขใจ (ใช้สีครามตัดสีส้มอิฐ)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Controls -->
+                    <div class="flex justify-between items-center p-2 bg-white text-xs">
+                        <button onclick="prevSlide()" class="p-1 rounded-lg bg-slate-100 text-slate-700 font-bold hover:bg-slate-200 active:scale-95 transition px-2.5">◀ ก่อนหน้า</button>
+                        <span id="slideIndicator" class="text-[11px] font-bold text-slate-500">1 / 3</span>
+                        <button onclick="nextSlide()" class="p-1 rounded-lg bg-amber-500 text-white font-bold hover:bg-amber-600 active:scale-95 transition px-2.5">ถัดไป ▶</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUICK FEEDBACK / ART POLL -->
+            <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 space-y-3 mb-3">
+                <div class="flex justify-between items-center border-b pb-2">
+                    <h4 class="font-bold text-xs text-indigo-900 flex items-center gap-1">
+                        🗳️ Quick Feedback / Art Poll
+                    </h4>
+                    <span class="text-[10px] bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-full font-bold">โหวตสัปดาห์นี้</span>
+                </div>
+                <p class="text-[11px] text-slate-600">ผลงานชิ้นไหนนำหลักการ "ความสมดุลและความขัดแย้ง" มาใช้ได้โดดเด่นที่สุด?</p>
+
+                <!-- POLL OPTIONS -->
+                <div class="space-y-2 text-xs">
+                    <!-- Poll Option 1 -->
+                    <button onclick="vote(1)" class="w-full text-left bg-slate-50 border border-slate-200 hover:border-indigo-400 p-2.5 rounded-xl transition active:scale-[0.98] space-y-1">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-slate-800">ผลงาน A: สินไซสายพังก์ (ม.2/1)</span>
+                            <span id="voteCount1" class="text-[10px] font-bold text-indigo-600">42% (18 โหวต)</span>
+                        </div>
+                        <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                            <div id="bar1" class="bg-indigo-600 h-full rounded-full transition-all duration-500" style="width: 42%;"></div>
+                        </div>
+                    </button>
+
+                    <!-- Poll Option 2 -->
+                    <button onclick="vote(2)" class="w-full text-left bg-slate-50 border border-slate-200 hover:border-indigo-400 p-2.5 rounded-xl transition active:scale-[0.98] space-y-1">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-slate-800">ผลงาน B: พญานาคแม่น้ำพอง (ม.2/2)</span>
+                            <span id="voteCount2" class="text-[10px] font-bold text-indigo-600">38% (16 โหวต)</span>
+                        </div>
+                        <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                            <div id="bar2" class="bg-purple-600 h-full rounded-full transition-all duration-500" style="width: 38%;"></div>
+                        </div>
+                    </button>
+
+                    <!-- Poll Option 3 -->
+                    <button onclick="vote(3)" class="w-full text-left bg-slate-50 border border-slate-200 hover:border-indigo-400 p-2.5 rounded-xl transition active:scale-[0.98] space-y-1">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-slate-800">ผลงาน C: ไดโนเสาร์ภูเวียงย่นระยะ (ม.2/3)</span>
+                            <span id="voteCount3" class="text-[10px] font-bold text-indigo-600">20% (9 โหวต)</span>
+                        </div>
+                        <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                            <div id="bar3" class="bg-amber-500 h-full rounded-full transition-all duration-500" style="width: 20%;"></div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- GALLERY IDEA WALL -->
+            <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 space-y-3">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 bg-indigo-50/70 p-2.5 rounded-xl border border-indigo-100">
+                    <div>
+                        <p class="text-xs font-bold text-indigo-900">ส่งงาน & ตรวจงานออนไลน์</p>
+                        <p class="text-[11px] text-slate-600">รหัสเข้าชั้นเรียน: <span class="font-mono font-bold text-indigo-700 bg-white px-1.5 py-0.5 rounded border border-indigo-200 select-all">kvnl5t7n</span></p>
+                    </div>
+                    <a href="https://classroom.google.com/c/ODk5NDc2MzEyOTAy?cjc=kvnl5t7n" target="_blank" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold px-3 py-2 rounded-lg text-center shadow-sm transition active:scale-95">ส่งงาน G-Classroom ↗</a>
+                </div>
+                <p class="text-xs text-slate-500">พูดคุยและแลกเปลี่ยนไอเดีย:</p>
+                <!-- Idea Wall Input -->
+                <div class="flex gap-2">
+                    <input type="text" id="userInput" placeholder="พิมพ์แชร์ไอเดียงานศิลป์..." class="flex-1 bg-slate-100 text-xs px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-indigo-500">
+                    <button onclick="addPost()" class="bg-indigo-700 text-white px-4 py-2 rounded-xl text-xs font-bold active:scale-95 transition">แชร์</button>
+                </div>
+                <div id="postContainer" class="space-y-2 max-h-36 overflow-y-auto">
+                    <div class="bg-slate-50 p-2.5 rounded-xl text-xs border border-slate-100 flex justify-between items-center">
+                        <span class="text-slate-700">📌 เอาลวดลายไดโนเสาร์ภูเวียงมาทำเกราะตัวละครเท่มากครับ!</span>
+                        <span class="text-[10px] text-slate-400">นักเรียน ม.2/1</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 5: KNOWLEDGE HUB & TOOLS -->
+        <section id="knowledge" class="px-4">
+            <h3 class="font-bold text-base text-slate-800 mb-2">5. Knowledge Hub & Tools (คลังความรู้)</h3>
+            <div class="bg-slate-900 rounded-2xl p-4 text-white space-y-3 shadow-md">
+                <p class="text-xs text-slate-300">แหล่งสืบค้นข้อมูลภายนอกและเครื่องมือสนับสนุนการเรียนรู้:</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <a href="https://www.canva.com" target="_blank" class="bg-white/10 hover:bg-white/20 p-2.5 rounded-xl text-xs font-medium text-center transition flex items-center justify-center">🎨 Canva Design Tool</a>
+                    <a href="https://classroom.google.com/c/ODk5NDc2MzEyOTAy?cjc=kvnl5t7n" target="_blank" class="bg-indigo-600/80 hover:bg-indigo-500 p-2.5 rounded-xl text-xs font-medium text-center transition border border-indigo-400/30 flex flex-col items-center justify-center">
+                        <span>💻 Google Classroom</span>
+                        <span class="text-[10px] text-amber-300 font-mono mt-0.5">รหัส: kvnl5t7n</span>
+                    </a>
+                    <a href="https://gemini.google.com" target="_blank" class="bg-white/10 hover:bg-white/20 p-2.5 rounded-xl text-xs font-medium text-center transition flex items-center justify-center gap-1.5">✨ Google Gemini AI</a>
+                    <a href="https://www.pinterest.com/" target="_blank" class="bg-rose-600/80 hover:bg-rose-500 p-2.5 rounded-xl text-xs font-medium text-center transition border border-rose-400/30 flex items-center justify-center gap-1.5">📌 Pinterest (หาไอเดียศิลปะ)</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER NAVIGATION -->
+    <nav class="fixed bottom-0 max-w-md w-full bg-white border-t border-slate-200 py-3 px-4 flex justify-around items-center z-40 shadow-lg">
+        <a href="#home" class="flex flex-col items-center text-indigo-700 text-[10px] font-medium">
+            <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+            Home
+        </a>
+        <a href="#fundamentals" class="flex flex-col items-center text-slate-500 hover:text-indigo-700 text-[10px] font-medium">
+            <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            ทฤษฎี
+        </a>
+        <a href="#labs" class="flex flex-col items-center text-slate-500 hover:text-indigo-700 text-[10px] font-medium">
+            <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+            Labs
+        </a>
+        <a href="#gallery" class="flex flex-col items-center text-slate-500 hover:text-indigo-700 text-[10px] font-medium">
+            <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            Gallery
+        </a>
+        <a href="#knowledge" class="flex flex-col items-center text-slate-500 hover:text-indigo-700 text-[10px] font-medium">
+            <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Knowledge
+        </a>
+    </nav>
+
+    <!-- CUSTOM MODAL POPUP -->
+    <div id="customModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4" onclick="closeModal()">
+        <div class="bg-white rounded-2xl p-5 max-w-xs w-full shadow-2xl space-y-3" onclick="event.stopPropagation()">
+            <h3 id="modalTitle" class="font-bold text-indigo-900 text-base border-b pb-2">รายละเอียด</h3>
+            <p id="modalDesc" class="text-xs text-slate-600 leading-relaxed whitespace-pre-line"></p>
+            <button onclick="closeModal()" class="w-full bg-indigo-700 text-white py-2 rounded-xl text-xs font-bold active:scale-95 transition">เข้าใจแล้ว</button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function openModal(title, desc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('customModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('customModal').classList.add('hidden');
+        }
+
+        function addPost() {
+            const input = document.getElementById('userInput');
+            const text = input.value.trim();
+            if(!text) return;
+
+            const container = document.getElementById('postContainer');
+            const newDiv = document.createElement('div');
+            newDiv.className = "bg-slate-50 p-2.5 rounded-xl text-xs border border-slate-100 flex justify-between items-center animate-pulse";
+            newDiv.innerHTML = `<span class="text-slate-700">📌 ${text}</span><span class="text-[10px] text-indigo-600 font-bold">ใหม่กิ๊บ</span>`;
+            
+            container.prepend(newDiv);
+            input.value = '';
+        }
+
+        // CAROUSEL DATA & LOGIC
+        const spotlightData = [
+            {
+                img: "https://placehold.co/400x250/d97706/ffffff?text=ISAN-LAB+Character+Design",
+                badge: "ม.2/1 • ISAN-LAB",
+                title: "ตัวละคร \"สินไซยุคไซเบอร์\"",
+                author: "โดย ด.ช.อนันต์ สุขใจ (ใช้สีครามตัดสีส้มอิฐ)"
+            },
+            {
+                img: "https://placehold.co/400x250/4f46e5/ffffff?text=Silk+Pattern+Armor",
+                badge: "ม.2/2 • ISAN-LAB",
+                title: "ชุดเกราะ \"ลายมัดหมี่ขอนแก่น\"",
+                author: "โดย ด.ญ.กัญญารัตน์ มีสุข (เน้นความสมดุลแบบสมมาตร)"
+            },
+            {
+                img: "https://placehold.co/400x250/059669/ffffff?text=Phuwiang+Dino+Mascot",
+                badge: "ม.2/3 • ISAN-LAB",
+                title: "มาสคอต \"ไดโนเสาร์ยอดนักซอ\"",
+                author: "โดย ด.ช.พงศกร สว่างวงศ์ (เน้นจังหวะความเคลื่อนไหว)"
+            }
+        ];
+
+        let currentSlide = 0;
+
+        function updateSlide() {
+            const item = spotlightData[currentSlide];
+            document.getElementById('spotlightImg').src = item.img;
+            document.getElementById('spotlightBadge').innerText = item.badge;
+            document.getElementById('spotlightTitle').innerText = item.title;
+            document.getElementById('spotlightAuthor').innerText = item.author;
+            document.getElementById('slideIndicator').innerText = `${currentSlide + 1} / ${spotlightData.length}`;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % spotlightData.length;
+            updateSlide();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + spotlightData.length) % spotlightData.length;
+            updateSlide();
+        }
+
+        // ART POLL LOGIC
+        let votes = [18, 16, 9];
+        let hasVoted = false;
+
+        function vote(optionIndex) {
+            if(hasVoted) {
+                openModal('ขอบคุณสำหรับการโหวต', 'คุณได้ทำการลงคะแนนเรียบร้อยแล้วในสัปดาห์นี้!');
+                return;
+            }
+
+            votes[optionIndex - 1]++;
+            hasVoted = true;
+
+            const totalVotes = votes.reduce((a, b) => a + b, 0);
+
+            for (let i = 1; i <= 3; i++) {
+                const count = votes[i - 1];
+                const percentage = Math.round((count / totalVotes) * 100);
+                document.getElementById(`voteCount${i}`).innerText = `${percentage}% (${count} โหวต)`;
+                document.getElementById(`bar${i}`).style.width = `${percentage}%`;
+            }
+
+            openModal('บันทึกการโหวตสำเร็จ! 🗳️', `คุณโหวตให้ผลงานตัวเลือกที่ ${optionIndex} เรียบร้อยแล้ว ขอบคุณที่ร่วมประเมินผลงานเพื่อนๆ ครับ!`);
+        }
+    </script>
+</body>
+</html>
